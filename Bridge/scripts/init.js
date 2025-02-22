@@ -12,6 +12,3 @@ exec(regCommand, (error, stdout, stderr) => {
         console.log('Protocol "cura://" successfully registered.');
     }
 });
-
-
-// cura://print?file=https://thingiverse.krasilnikov.info/valentine_rose.stl&settings=high_quality
