@@ -4,14 +4,12 @@ import {OrbitControls} from "three/examples/jsm/controls/OrbitControls";
 import matcapPorcelainWhite from "../../../assets/images/matcap-blue.png";
 // @ts-ignore
 import TreeSTLLoader from "three-stl-loader";
-import * as dat from "dat.gui";
 
 const STLLoader = TreeSTLLoader(THREE);
 const loader = new STLLoader();
 const textureLoader = new THREE.TextureLoader();
 textureLoader.crossOrigin = "anonymous";
 
-const gui = new dat.GUI();
 
 interface ModelViewProps {}
 interface ModelViewState {}
@@ -68,8 +66,8 @@ export class ModelView extends Component<ModelViewProps, ModelViewState> {
         const controls = new OrbitControls(camera, renderer.domElement);
         controls.minDistance = 100;
         controls.maxDistance = 700;
+        controls.enablePan = false;
 
-        //change file names
         loader.load(
             "https://cdn.krasilnikov.info/valentine_rose.stl",
             (geometry: THREE.BufferGeometry) => {
@@ -97,7 +95,6 @@ export class ModelView extends Component<ModelViewProps, ModelViewState> {
         const pointLight = new THREE.PointLight(0xff0000, 1, 100);
         pointLight.position.set(5, 5, 5);
         scene.add(pointLight);
-        gui.add(pointLight.position, "y").min(-10).max(10).step(0.1);
 
         const animate = createAnimate({ scene, camera, renderer });
 
