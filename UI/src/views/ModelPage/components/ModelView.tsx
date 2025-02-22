@@ -88,7 +88,7 @@ export class ModelView extends Component<ModelViewProps, ModelViewState> {
 
                 animate.addTrigger(() => {
                     if (!userInteracted && mesh) {
-                        mesh.rotation.z += 0.005;
+                        mesh.rotation.z -= 0.005;
                     }
                 });
             },
