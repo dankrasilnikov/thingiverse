@@ -7,10 +7,11 @@ const os = require('os');
 const http = require('http');
 const https = require('https');
 
+const CURA_PATH = `"C:\\Program Files\\UltiMaker Cura 5.9.1\\UltiMaker-Cura.exe"`;
+
 const app = express();
 const port = 3535;
 
-const projectDir = __dirname;
 const logDir = path.join(os.tmpdir(), 'cura-agent-logs');
 const downloadDir = path.join(os.tmpdir(), 'cura-agent-downloads');
 
@@ -41,6 +42,7 @@ async function downloadFile(fileUrl) {
         const fileName = path.basename(parsedUrl.pathname) || `temp_${Date.now()}.stl`;
         const localPath = path.join(downloadDir, fileName);
         const fileStream = fs.createWriteStream(localPath);
+
         protocol.get(fileUrl, (res) => {
             if (res.statusCode !== 200) {
                 reject(new Error(`Request Failed. Status Code: ${res.statusCode}`));
@@ -66,8 +68,8 @@ async function launchCura(file, settings, callback) {
             return callback(err);
         }
     }
-    const curaPath = `"C:\\Program Files\\UltiMaker Cura 5.9.1\\UltiMaker-Cura.exe"`;
-    const command = `cmd /c start "" ${curaPath} "${localFile}"`;
+
+    const command = `cmd /c start "" ${CURA_PATH} "${localFile}"`;
     log(`Execute: ${command}`);
     exec(command, (error, stdout) => {
         if (error) return callback(error);
