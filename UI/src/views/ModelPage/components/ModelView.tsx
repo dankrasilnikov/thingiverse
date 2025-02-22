@@ -55,7 +55,7 @@ export class ModelView extends Component<ModelViewProps, ModelViewState> {
             10,
             100000
         );
-        camera.position.z = 500;
+        camera.position.z = 200;
 
         const renderer = new THREE.WebGLRenderer({ antialias: true });
         renderer.setSize(window.innerWidth, window.innerHeight);
