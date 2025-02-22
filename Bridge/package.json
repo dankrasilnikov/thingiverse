@@ -1,0 +1,13 @@
+{
+  "main": "scripts/start.js",
+  "scripts": {
+    "registry_init": "node scripts/init.js",
+    "start": "node scripts/start.js",
+    "build": "pkg scripts/start.js --targets node18-win-x64 --output ./output/cura-agent.exe"
+  },
+  "dependencies": {
+    "axios": "^1.7.9",
+    "express": "^4.21.2",
+    "node-fetch": "^3.3.2"
+  }
+}
