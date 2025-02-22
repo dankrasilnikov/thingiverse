@@ -7,7 +7,7 @@ type Props = {
 
 const PrintNowButton = ({fileName}: Props) => {
     return (
-        <a href={`cura://print?file=https://thingiverse.krasilnikov.info/${fileName}&settings=high_quality`}
+        <a href={`cura://print?file=https://cdn.thingiverse.krasilnikov.info/${fileName}&settings=high_quality`}
            target="_blank"
            rel="noreferrer"
            className={styles.button}>Print Now</a>
