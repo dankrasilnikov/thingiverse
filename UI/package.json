@@ -41,5 +41,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "postcss-extend": "^1.0.5",
+    "postcss-import": "^16.1.0",
+    "postcss-nested": "^7.0.2",
+    "stylelint": "^16.14.1"
   }
 }
