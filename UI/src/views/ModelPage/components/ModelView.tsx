@@ -68,6 +68,11 @@ export class ModelView extends Component<ModelViewProps, ModelViewState> {
         controls.maxDistance = 700;
         controls.enablePan = false;
 
+        let userInteracted = false;
+        controls.addEventListener("start", () => {
+            userInteracted = true;
+        });
+
         loader.load(
             "https://cdn.krasilnikov.info/valentine_rose.stl",
             (geometry: THREE.BufferGeometry) => {
@@ -82,8 +87,9 @@ export class ModelView extends Component<ModelViewProps, ModelViewState> {
                 mesh.rotation.x = -1.2;
 
                 animate.addTrigger(() => {
-                    // mesh.rotation.x += 0.005;
-                    // mesh.rotation.y += 0.005;
+                    if (!userInteracted && mesh) {
+                        mesh.rotation.z += 0.005;
+                    }
                 });
             },
             undefined,
