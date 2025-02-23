@@ -2,6 +2,7 @@ import React, {Component, createRef} from "react";
 import * as THREE from "three";
 import {OrbitControls} from "three/examples/jsm/controls/OrbitControls";
 import matcapPorcelainWhite from "../../../assets/images/matcap-blue.png";
+import styles from '../modelpage.module.scss'
 // @ts-ignore
 import TreeSTLLoader from "three-stl-loader";
 
@@ -10,8 +11,8 @@ const loader = new STLLoader();
 const textureLoader = new THREE.TextureLoader();
 textureLoader.crossOrigin = "anonymous";
 
-
 interface ModelViewProps {}
+
 interface ModelViewState {}
 
 function createAnimate({
@@ -47,20 +48,20 @@ export class ModelView extends Component<ModelViewProps, ModelViewState> {
     private mount: React.RefObject<HTMLDivElement | null> = createRef();
 
     componentDidMount() {
+        const container = this.mount.current;
+        const width = container ? container.clientWidth : window.innerWidth;
+        const height = container ? container.clientHeight : window.innerHeight;
+
         const scene = new THREE.Scene();
         scene.background = new THREE.Color(0xf0ecec);
-        const camera = new THREE.PerspectiveCamera(
-            75,
-            window.innerWidth / window.innerHeight,
-            10,
-            100000
-        );
-        camera.position.z = 200;
 
-        const renderer = new THREE.WebGLRenderer({ antialias: true });
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        if (this.mount.current) {
-            this.mount.current.appendChild(renderer.domElement);
+        const camera = new THREE.PerspectiveCamera(75, width / height, 10, 100000);
+        camera.position.z = 500;
+
+        const renderer = new THREE.WebGLRenderer({antialias: true});
+        renderer.setSize(width, height);
+        if (container) {
+            container.appendChild(renderer.domElement);
         }
 
         const controls = new OrbitControls(camera, renderer.domElement);
@@ -73,14 +74,17 @@ export class ModelView extends Component<ModelViewProps, ModelViewState> {
             userInteracted = true;
         });
 
+        let mesh: THREE.Mesh | null = null;
+        const animate = createAnimate({scene, camera, renderer});
+
         loader.load(
-            "https://cdn.krasilnikov.info/valentine_rose.stl",
+            "https://cdn.krasilnikov.info/oiia_cat.stl",
             (geometry: THREE.BufferGeometry) => {
                 const material = new THREE.MeshMatcapMaterial({
                     color: 0xffffff,
                     matcap: textureLoader.load(matcapPorcelainWhite),
                 });
-                const mesh = new THREE.Mesh(geometry, material);
+                mesh = new THREE.Mesh(geometry, material);
                 mesh.geometry.computeVertexNormals();
                 mesh.geometry.center();
                 scene.add(mesh);
@@ -88,7 +92,7 @@ export class ModelView extends Component<ModelViewProps, ModelViewState> {
 
                 animate.addTrigger(() => {
                     if (!userInteracted && mesh) {
-                        mesh.rotation.z -= 0.005;
+                        mesh.rotation.z -= 0.01;
                     }
                 });
             },
@@ -102,18 +106,20 @@ export class ModelView extends Component<ModelViewProps, ModelViewState> {
         pointLight.position.set(5, 5, 5);
         scene.add(pointLight);
 
-        const animate = createAnimate({ scene, camera, renderer });
-
         window.addEventListener("resize", () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
+            if (container) {
+                const newWidth = container.clientWidth;
+                const newHeight = container.clientHeight;
+                camera.aspect = newWidth / newHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(newWidth, newHeight);
+            }
         });
 
         animate.animate();
     }
 
     render() {
-        return <div ref={this.mount} />;
+        return <div className={styles.modelCanvas} ref={this.mount}/>;
     }
 }

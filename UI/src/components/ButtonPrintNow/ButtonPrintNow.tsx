@@ -1,11 +1,7 @@
 import React from "react";
 import styles from './button.module.scss'
 
-type Props = {
-    fileName: string;
-}
-
-const PrintNowButton = ({fileName}: Props) => {
+const ButtonPrintNow: React.FC<{ fileName: string }> = ({fileName}) => {
     return (
         <a href={`curademo://open?file?file=https://cdn.krasilnikov.info/${fileName}`}
            rel="noreferrer"
@@ -14,4 +10,4 @@ const PrintNowButton = ({fileName}: Props) => {
     );
 }
 
-export default PrintNowButton;
+export default ButtonPrintNow;
