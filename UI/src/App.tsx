@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import ModelPage from "@/views/ModelPage";
+import ModelPage from "@/views/ModelPage/ModelPage";
 import {BrowserRouter, Route, Routes} from "react-router";
 
 function App() {
