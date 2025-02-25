@@ -1,0 +1,29 @@
+@import '@/styles/colors.scss';
+
+.pageWrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 14px;
+  background-color: $white;
+  border-radius: 24px 24px 0 0;
+  border: 1px solid $lightgray;
+  box-sizing: border-box;
+}
+
+.modelView {
+  display: grid;
+  grid-template-columns: 7fr 3fr;
+  gap: 12px;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.modelCanvas {
+  background-color: $bg;
+  aspect-ratio: 16 / 9;
+}
+
+.gallery {
+  height: 100%;
+}

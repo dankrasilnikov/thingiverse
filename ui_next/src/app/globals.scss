@@ -1,0 +1,46 @@
+@import '@/styles/colors.scss';
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    line-height: 130%;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    min-height: 100vh;
+    font-family: sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $black;
+    background: linear-gradient(to bottom, #196EF0, #196EF0, #BBBBBB 30%, #BBBBBB 75%) no-repeat;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    min-height: 100vh;
+    padding: 1rem;
+}

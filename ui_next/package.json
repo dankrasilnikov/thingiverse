@@ -1,5 +1,5 @@
 {
-  "name": "ui_next",
+  "name": "thingiverse",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -22,7 +22,15 @@
     "next": "15.1.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "@vercel/speed-insights": "^1.2.0"
+    "@vercel/speed-insights": "^1.2.0",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.2.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/three": "^0.173.0",
+    "three": "0.126.1",
+    "three-stl-loader": "^1.0.6"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
@@ -42,7 +50,6 @@
     "stylelint-config-recess-order": "^6.0.0",
     "stylelint-config-standard": "^37.0.0",
     "stylelint-scss": "^6.11.1",
-    "tailwindcss": "^3.4.1",
     "typescript": "^5"
   }
 }
