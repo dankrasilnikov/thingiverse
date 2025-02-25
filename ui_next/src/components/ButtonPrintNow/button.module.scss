@@ -1,47 +1,29 @@
+@use '@/styles/colors.scss' as *;
+
 @property --rotate {
   syntax: "<angle>";
   initial-value: 132deg;
   inherits: false;
 }
 
-:root {
-  --button-height: 10vh;
-  --button-width: calc(var(--button-height) * 1.618);
-}
-
-
-body {
-  min-height: 100vh;
-  background: #212534;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  box-sizing: border-box;
-}
-
-
 .button {
-  background: #191c29;
-  width: var(--button-width);
-  height: var(--button-height);
-  padding: 3px;
+  background: $primary;
+  padding: 8px 16px;
   position: relative;
-  border-radius: 6px;
   justify-content: center;
   align-items: center;
   text-align: center;
   display: flex;
-  font-size: 1.5em;
-  color: rgb(88 199 250 / 100%);
+  font-size: 16px;
+  color: $white;
   cursor: pointer;
-  font-family: cursive;
+  font-weight: bold;
   text-decoration: none;
+  border-top-left-radius: 30px;
+  transition: border-top-left-radius .4s;
 
   &:hover {
-    color: rgb(88 199 250 / 100%);
-    transition: color 1s;
+    border-top-left-radius: 6px;
 
     &:after, &:before {
       animation: none;

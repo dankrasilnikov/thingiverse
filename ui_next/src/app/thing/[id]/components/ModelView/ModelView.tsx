@@ -7,6 +7,8 @@ import {OrbitControls} from "three/examples/jsm/controls/OrbitControls";
 import TreeSTLLoader from "three-stl-loader";
 import styles from "./modelview.module.scss";
 import Image from "next/image";
+import ButtonPrintNow from "@/components/ButtonPrintNow";
+import ButtonSwitchDimension from "@/app/thing/[id]/components/ButtonSwitchDimension/ButtonSwitchDimension";
 
 const STLLoader = TreeSTLLoader(THREE);
 
@@ -18,7 +20,7 @@ interface ModelViewProps {
 
 function ModelView({modelUrl, placeholderSrc, placeholderAlt}: ModelViewProps) {
     const mountRef = useRef<HTMLDivElement | null>(null);
-    const [isModelVisible, setIsModelVisible] = useState(false);
+    const [isModelVisible, setModelVisible] = useState(false);
 
     useEffect(() => {
         if (!isModelVisible) return;
@@ -130,20 +132,32 @@ function ModelView({modelUrl, placeholderSrc, placeholderAlt}: ModelViewProps) {
             });
         };
     }, [isModelVisible]);
-    if (isModelVisible) {
-        return <div className={styles.modelCanvas} ref={mountRef} onClick={() => setIsModelVisible(false)}/>;
-    }
 
-    return (
-        <div className={styles.modelCanvas}>
+    const getPlaceholder = () => {
+        return (
             <Image width={1000}
                    height={1000}
                    priority={true}
                    draggable={false}
                    src={placeholderSrc}
                    alt={placeholderAlt}
-                   className={styles.modelPreview}
-                   onClick={() => setIsModelVisible(true)}/>
+                   className={styles.modelPreview}/>
+        );
+    }
+
+    return (
+        <div className={styles.modelCanvas} ref={mountRef}>
+
+            {!isModelVisible && (getPlaceholder())}
+
+            <div className={styles.printButtonWrapper}>
+                <ButtonPrintNow modelUrl={modelUrl}/>
+            </div>
+
+            <div className={styles.dimensionsButtonWrapper}>
+                <ButtonSwitchDimension isModelVisible={isModelVisible} setModelVisible={setModelVisible}/>
+            </div>
+
         </div>
     )
 }
