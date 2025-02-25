@@ -1,5 +1,6 @@
 import type {Metadata} from "next";
-import Header from "@/app/(thing)/thing/components";
+import Header from "./components/Header";
+import React from "react";
 
 
 export const metadata: Metadata = {
