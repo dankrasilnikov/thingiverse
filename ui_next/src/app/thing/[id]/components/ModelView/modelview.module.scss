@@ -1,0 +1,19 @@
+@use "@/styles/colors" as *;
+
+.modelCanvas {
+  background-color: $bg;
+  aspect-ratio: 16 / 9;
+  flex: 1;
+  width: 70%;
+  display: flex;
+  flex-shrink: 0;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.modelPreview {
+  height: 100%;
+  width: auto;
+}

@@ -1,0 +1,10 @@
+@import '@/styles/colors.scss';
+
+.gallery {
+  width: 28%;
+  height: 100%;
+  min-height: 0;
+  max-height: 370px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
