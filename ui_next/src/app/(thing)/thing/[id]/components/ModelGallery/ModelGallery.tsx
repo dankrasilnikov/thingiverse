@@ -1,6 +1,6 @@
 import React from "react";
 import styles from './modelgallery.module.scss';
-import GalleryItem from "@/app/thing/[id]/components/GalleryItem";
+import GalleryItem from "../GalleryItem";
 
 const gallery = [
     {
