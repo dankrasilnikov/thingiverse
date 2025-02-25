@@ -1,22 +1,28 @@
 "use client";
 
-import React, {useEffect, useRef} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import * as THREE from "three";
 import {OrbitControls} from "three/examples/jsm/controls/OrbitControls";
 // @ts-ignore
 import TreeSTLLoader from "three-stl-loader";
-import styles from "../modelpage.module.scss";
+import styles from "./modelview.module.scss";
+import Image from "next/image";
 
 const STLLoader = TreeSTLLoader(THREE);
 
 interface ModelViewProps {
     modelUrl: string;
+    placeholderSrc: string;
+    placeholderAlt: string;
 }
 
-export function ModelView({modelUrl}: ModelViewProps) {
+function ModelView({modelUrl, placeholderSrc, placeholderAlt}: ModelViewProps) {
     const mountRef = useRef<HTMLDivElement | null>(null);
+    const [isModelVisible, setIsModelVisible] = useState(false);
 
     useEffect(() => {
+        if (!isModelVisible) return;
+
         const container = mountRef.current;
         if (!container) return;
 
@@ -123,7 +129,24 @@ export function ModelView({modelUrl}: ModelViewProps) {
                 }
             });
         };
-    }, []);
+    }, [isModelVisible]);
+    if (isModelVisible) {
+        return <div className={styles.modelCanvas} ref={mountRef} onClick={() => setIsModelVisible(false)}/>;
+    }
 
-    return <div className={styles.modelCanvas} ref={mountRef}/>;
+    return (
+        <div className={styles.modelCanvas}>
+            <Image width={1000}
+                   height={1000}
+                   priority={true}
+                   draggable={false}
+                   src={placeholderSrc}
+                   alt={placeholderAlt}
+                   className={styles.modelPreview}
+                   onClick={() => setIsModelVisible(true)}/>
+        </div>
+    )
 }
+
+
+export default ModelView;
