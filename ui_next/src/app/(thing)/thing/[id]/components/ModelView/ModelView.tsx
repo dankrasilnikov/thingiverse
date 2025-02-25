@@ -8,7 +8,7 @@ import TreeSTLLoader from "three-stl-loader";
 import styles from "./modelview.module.scss";
 import Image from "next/image";
 import ButtonPrintNow from "@/components/ButtonPrintNow";
-import ButtonSwitchDimension from "@/app/thing/[id]/components/ButtonSwitchDimension/ButtonSwitchDimension";
+import ButtonSwitchDimension from "../ButtonSwitchDimension";
 
 const STLLoader = TreeSTLLoader(THREE);
 
@@ -27,6 +27,7 @@ function ModelView({modelUrl, placeholderSrc, placeholderAlt}: ModelViewProps) {
 
         const container = mountRef.current;
         if (!container) return;
+
 
         const {clientWidth: width, clientHeight: height} = container;
 

@@ -1,6 +1,6 @@
 import styles from './modelpage.module.scss';
-import ModelView from "@/app/thing/[id]/components/ModelView";
-import ModelGallery from "@/app/thing/[id]/components/ModelGallery";
+import ModelView from "./components/ModelView";
+import ModelGallery from "./components/ModelGallery";
 
 export default function Page() {
     return (
