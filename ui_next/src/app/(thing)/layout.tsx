@@ -1,4 +1,5 @@
 import type {Metadata} from "next";
+import Header from "@/app/(thing)/thing/components";
 
 
 export const metadata: Metadata = {
@@ -13,6 +14,7 @@ export default function RootLayout({
 }>) {
     return (
         <>
+            <Header/>
             {children}
         </>
     );
