@@ -3,12 +3,13 @@
 import React, {useEffect, useRef, useState} from "react";
 import * as THREE from "three";
 import {OrbitControls} from "three/examples/jsm/controls/OrbitControls";
-// @ts-ignore
-import TreeSTLLoader from "three-stl-loader";
 import styles from "./modelview.module.scss";
 import Image from "next/image";
 import ButtonPrintNow from "@/components/ButtonPrintNow";
 import ButtonSwitchDimension from "../ButtonSwitchDimension";
+
+// @ts-ignore
+import TreeSTLLoader from "three-stl-loader";
 
 const STLLoader = TreeSTLLoader(THREE);
 

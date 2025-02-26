@@ -1,0 +1,22 @@
+@use '@/styles/colors' as *;
+
+.inputSearch {
+  display: block;
+  width: 240px;
+  padding: 14px 0;
+  border: 1px solid $lightgray;
+  border-radius: 9999px;
+  background-color: $white;
+  color: $black;
+  text-align: center;
+  font-size: 12px;
+
+  &::placeholder {
+    color: $black;
+    opacity: 1;
+  }
+
+  &:focus-visible {
+    outline: none;
+  }
+}

@@ -8,7 +8,7 @@ const ButtonSwitchDimensions: React.FC<{
 }> = ({isModelVisible, setModelVisible}) => {
     return (
         <button className={styles.buttonSwitchDimensions} onClick={() => setModelVisible(!isModelVisible)}>
-            {isModelVisible ? "2D" : "3D"}
+            {isModelVisible ? "View 2D" : "View 3D"}
         </button>
     );
 }
