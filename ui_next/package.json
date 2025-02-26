@@ -19,16 +19,17 @@
     "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": "prettier -w -u"
   },
   "dependencies": {
-    "next": "15.1.7",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "@vercel/speed-insights": "^1.2.0",
+    "@next/third-parties": "^15.1.7",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.2.0",
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.5.2",
     "@types/three": "^0.173.0",
+    "@vercel/speed-insights": "^1.2.0",
+    "next": "15.1.7",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "three": "0.126.1",
     "three-stl-loader": "^1.0.6"
   },
