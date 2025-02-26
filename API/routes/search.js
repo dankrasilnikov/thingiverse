@@ -11,7 +11,7 @@ router.get('/', async (req, res) => {
         const result = await esClient.search({
             index: 'things',
             size: 5,
-            _source: ['id', 'previewUrl', 'title', 'author'],
+            _source: ['id', 'images', 'title', 'author'],
             query: {
                 multi_match: {
                     query,

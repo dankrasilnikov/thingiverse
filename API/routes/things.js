@@ -111,7 +111,7 @@ router.get('/', async (req, res) => {
             index: 'things',
             from,
             size,
-            _source: ['id', 'previewUrl', 'title', 'author'],
+            _source: ['id', 'images', 'title', 'author'],
             query: {
                 match_all: {}
             },
