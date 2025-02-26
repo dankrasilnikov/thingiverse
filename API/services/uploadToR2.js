@@ -1,4 +1,4 @@
-import {Client as S3Client, PutObjectCommand} from '@aws-sdk/client-s3';
+import {S3Client, PutObjectCommand} from '@aws-sdk/client-s3';
 
 const R2_BUCKET = process.env.R2_BUCKET;
 const R2_ENDPOINT = process.env.R2_ENDPOINT;
