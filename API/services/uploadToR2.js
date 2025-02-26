@@ -6,7 +6,7 @@ const R2_ACCESS_KEY = process.env.R2_ACCESS_KEY;
 const R2_SECRET_KEY = process.env.R2_SECRET_KEY;
 
 const s3Client = new S3Client({
-    region: 'eu',
+    region: 'auto',
     endpoint: R2_ENDPOINT,
     credentials: {
         accessKeyId: R2_ACCESS_KEY,

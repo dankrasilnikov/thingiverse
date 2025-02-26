@@ -1,37 +1,7 @@
-import * as THREE from 'three';
-import { STLLoader } from 'three/examples/jsm/loaders/STLLoader.js';
-import { GLTFExporter } from 'three/examples/jsm/exporters/GLTFExporter.js';
-import {Buffer} from 'buffer';
+import {STLLoader} from "three/examples/jsm/loaders/STLLoader";
+import {GLTFExporter} from "three/examples/jsm/exporters/GLTFExporter";
+import * as THREE from "three";
 
-if (typeof global.FileReader === 'undefined') {
-    class NodeFileReader {
-        constructor() {
-            this.onload = null;
-            this.onerror = null;
-        }
-
-        readAsDataURL(blob) {
-            let buffer;
-            if (Buffer.isBuffer(blob)) {
-                buffer = blob;
-            } else if (blob.buffer) {
-                buffer = Buffer.from(blob.buffer, blob.byteOffset, blob.byteLength);
-            } else {
-                if (this.onerror) this.onerror(new Error('Input is not a Buffer or ArrayBuffer'));
-                return;
-            }
-            const base64 = buffer.toString('base64');
-            const mime = blob.type || 'application/octet-stream';
-            // Используем setTimeout, чтобы эмулировать асинхронность
-            setTimeout(() => {
-                if (this.onload) {
-                    this.onload({ target: { result: `data:${mime};base64,${base64}` } });
-                }
-            }, 0);
-        }
-    }
-    global.FileReader = NodeFileReader;
-}
 
 export async function convertStlToGltf(stlBuffer) {
     console.log('start convert to gltf');

@@ -15,6 +15,7 @@ const upload = multer({
 
 const multipleUpload = upload.fields([
     { name: 'stls', maxCount: 10 },
+    { name: 'gltfs', maxCount: 10 },
     { name: 'images', maxCount: 10 },
 ]);
 
@@ -32,21 +33,27 @@ router.post('/', multipleUpload, async (req, res) => {
         }
 
         const stlFiles = req.files['stls'] || [];
+        const gltfFiles = req.files['gltfs'] || []
         const imageFiles = req.files['images'] || [];
 
         const imagesResult = [];
         const filesResult = [];
 
-        for (const file of stlFiles) {
-            const originalName = file.originalname;
-            const stlBuffer = file.buffer;
+        for (let i = 0; i < stlFiles.length; i++) {
+            const stlFile = stlFiles[i];
+            const gltfFile = gltfFiles[i];
 
-            const stlKey = `stls/${Date.now()}-${originalName}`;
+            const originalName = stlFile.originalname;
+            const stlBuffer = stlFile.buffer;
+            const gltfBuffer = gltfFile.buffer;
+
+            const date = Date.now();
+
+            const stlKey = `stls/${date}-${originalName}`;
             const stlUrl = await uploadToR2(stlKey, stlBuffer, 'application/sla');
 
 
-            const gltfBuffer = await convertStlToGltf(stlBuffer);
-            const gltfKey = `gltfs/${Date.now()}-converted-${originalName}.gltf`;
+            const gltfKey = `gltfs/${date}-${originalName}.gltf`;
             const gltfUrl = await uploadToR2(gltfKey, gltfBuffer, 'application/json');
 
             filesResult.push({stlUrl, gltfUrl});
