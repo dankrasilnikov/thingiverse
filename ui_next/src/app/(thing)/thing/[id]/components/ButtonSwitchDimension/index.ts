@@ -1,1 +1,1 @@
-export {default} from './ButtonSwitchDimension';
+export { default } from './ButtonSwitchDimension'

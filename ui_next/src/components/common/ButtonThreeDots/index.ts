@@ -1,1 +1,1 @@
-export {default} from './ButtonThreeDots';
+export { default } from './ButtonThreeDots'

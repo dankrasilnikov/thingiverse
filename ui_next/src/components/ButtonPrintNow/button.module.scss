@@ -1,7 +1,7 @@
 @use '@/styles/colors.scss' as *;
 
 @property --rotate {
-  syntax: "<angle>";
+  syntax: '<angle>';
   initial-value: 132deg;
   inherits: false;
 }
@@ -20,12 +20,13 @@
   font-weight: bold;
   text-decoration: none;
   border-top-left-radius: 30px;
-  transition: border-top-left-radius .4s;
+  transition: border-top-left-radius 0.4s;
 
   &:hover {
     border-top-left-radius: 6px;
 
-    &:after, &:before {
+    &:after,
+    &:before {
       animation: none;
       opacity: 0;
     }
@@ -33,7 +34,7 @@
 
   &:after {
     position: absolute;
-    content: "";
+    content: '';
     top: calc(var(--button-height) / 6);
     left: 0;
     right: 0;
@@ -44,19 +45,27 @@
     transform: scale(0.8);
     filter: blur(calc(var(--button-height) / 6));
     background-image: linear-gradient(
-                    var(--rotate), #5ddcff, #3c67e3 43%, #4e00c2);
+      var(--rotate),
+      #5ddcff,
+      #3c67e3 43%,
+      #4e00c2
+    );
     opacity: 1;
-    transition: opacity .5s;
+    transition: opacity 0.5s;
     animation: spin 2.5s linear infinite;
   }
 
   &:before {
-    content: "";
+    content: '';
     width: 104%;
     height: 104%;
     border-radius: 8px;
     background-image: linear-gradient(
-                    var(--rotate), #5ddcff, #3c67e3 43%, #4e00c2);
+      var(--rotate),
+      #5ddcff,
+      #3c67e3 43%,
+      #4e00c2
+    );
     position: absolute;
     z-index: -1;
     top: -1%;
@@ -64,7 +73,6 @@
     animation: spin 2.5s linear infinite;
   }
 }
-
 
 @keyframes spin {
   0% {
@@ -74,4 +82,3 @@
     --rotate: 360deg;
   }
 }
-

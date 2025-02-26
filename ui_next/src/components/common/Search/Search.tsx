@@ -1,11 +1,12 @@
-'use client';
+'use client'
 
-import React from "react";
-import styles from './search.module.scss';
+import React from 'react'
+import styles from './search.module.scss'
 
 const Search: React.FC<{}> = () => {
-
-    return <input type='text' placeholder='Search' className={styles.inputSearch}/>;
+  return (
+    <input type='text' placeholder='Search' className={styles.inputSearch} />
+  )
 }
 
-export default Search;
+export default Search

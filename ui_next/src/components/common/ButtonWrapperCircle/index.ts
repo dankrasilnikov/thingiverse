@@ -1,1 +1,1 @@
-export {default} from './ButtonWrapperCircle';
+export { default } from './ButtonWrapperCircle'

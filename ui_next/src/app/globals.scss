@@ -20,7 +20,8 @@ body {
   color: #333;
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
@@ -34,7 +35,14 @@ body {
   justify-content: center;
   align-items: center;
   color: $black;
-  background: linear-gradient(to bottom, #196EF0, #196EF0 3%, #EAEAEA 30%, #EAEAEA 75%) no-repeat;
+  background: linear-gradient(
+      to bottom,
+      #196ef0,
+      #196ef0 3%,
+      #eaeaea 30%,
+      #eaeaea 75%
+    )
+    no-repeat;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -48,4 +56,3 @@ body {
   --button-height: 10vh;
   --button-width: calc(var(--button-height) * 1.618);
 }
-

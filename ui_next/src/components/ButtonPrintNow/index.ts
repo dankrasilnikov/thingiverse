@@ -1,1 +1,1 @@
-export {default} from './ButtonPrintNow'
+export { default } from './ButtonPrintNow'

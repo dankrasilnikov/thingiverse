@@ -1,4 +1,4 @@
-@use "@/styles/colors" as *;
+@use '@/styles/colors' as *;
 
 .modelCanvas {
   background-color: $bg;
@@ -24,7 +24,7 @@
   right: 0;
 }
 
-.dimensionsButtonWrapper{
+.dimensionsButtonWrapper {
   position: absolute;
   right: 0;
   top: 0;

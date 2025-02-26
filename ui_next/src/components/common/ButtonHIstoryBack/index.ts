@@ -1,1 +1,1 @@
-export {default} from './ButtonHistotyBack';
+export { default } from './ButtonHistotyBack'

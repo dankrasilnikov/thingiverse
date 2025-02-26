@@ -1,1 +1,1 @@
-export {default} from './ModelView';
+export { default } from './ModelView'
