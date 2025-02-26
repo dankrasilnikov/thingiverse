@@ -101,4 +101,52 @@ router.post('/', multipleUpload, async (req, res) => {
     }
 });
 
+router.get('/', async (req, res) => {
+    const page = parseInt(req.query.page) || 1;
+    const size = parseInt(req.query.size) || 20;
+    const from = (page - 1) * size;
+
+    try {
+        const result = await esClient.search({
+            index: 'things',
+            from,
+            size,
+            _source: ['id', 'previewUrl', 'title', 'author'],
+            query: {
+                match_all: {}
+            },
+            sort: [{id: {order: 'asc'}}]
+        });
+
+        const total = typeof result.hits.total === 'number'
+            ? result.hits.total
+            : result.hits.total.value;
+
+        const hits = result.hits.hits.map(hit => hit._source);
+        res.json({page, size, total, results: hits});
+    } catch (error) {
+        console.error('Error fetching models:', error);
+        res.status(500).json({error: error.message});
+    }
+});
+
+router.get('/:id', async (req, res) => {
+    const id = req.params.id;
+    try {
+        const result = await esClient.get({
+            index: 'things',
+            id: id
+        });
+        res.json(result._source);
+    } catch (error) {
+        console.error('Error fetching model:', error);
+
+        if (error.meta && error.meta.statusCode === 404) {
+            res.status(404).json({error: 'Model not found'});
+        } else {
+            res.status(500).json({error: error.message});
+        }
+    }
+});
+
 export default router;
