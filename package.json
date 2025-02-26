@@ -4,6 +4,6 @@
   },
   "scripts": {
     "prepare": "husky",
-    "pre-commit": "pnpm run --filter \"./ui_next/\" pre-commit"
+    "pre-commit": "pnpm run --filter \"UI/\" pre-commit"
   }
 }
