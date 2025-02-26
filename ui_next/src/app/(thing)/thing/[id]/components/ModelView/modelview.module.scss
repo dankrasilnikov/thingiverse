@@ -1,31 +1,31 @@
 @use '@/styles/colors' as *;
 
 .modelCanvas {
-  background-color: $bg;
-  aspect-ratio: 16 / 9;
-  flex: 1;
-  width: 70%;
-  display: flex;
-  flex-shrink: 0;
-  height: auto;
-  justify-content: center;
-  align-items: center;
   position: relative;
+  display: flex;
+  flex: 1;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  background-color: $bg;
 }
 
 .modelPreview {
-  height: 100%;
   width: auto;
+  height: 100%;
 }
 
 .printButtonWrapper {
   position: absolute;
-  bottom: 0;
   right: 0;
+  bottom: 0;
 }
 
 .dimensionsButtonWrapper {
   position: absolute;
-  right: 0;
   top: 0;
+  right: 0;
 }

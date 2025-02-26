@@ -5,14 +5,13 @@
   "scripts": {
     "dev": "next dev",
     "build": "prettier --check . && stylelint --allow-empty-input \"**/*.{css,scss}\" && next build",
-    "pretty": "prettier --write .",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "prettier --write . && stylelint --fix \\\"**/*.{css,scss}\\\" && eslint --cache --fix .",
     "pre-commit": "lint-staged"
   },
   "lint-staged": {
-    "./src/*.{ts,tsx}": "eslint",
-    "./src/*.{css,scss}": "stylelint",
+    "./src/*.{ts,tsx}": "eslint --cache --fix",
+    "./src/*.{css,scss}": "stylelint --fix",
     "./src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": "prettier -w -u"
   },
   "dependencies": {
