@@ -1,6 +1,6 @@
 import 'dotenv/config';
 import express from 'express';
-import convertRoutes from './routes/convert.js';
+import things from './routes/things.js';
 
 
 const app = express();
@@ -12,7 +12,7 @@ app.use(express.json());
 // app.use('/api/v1/models', thingsRoutes);
 // app.use('/api/v1/model', modelRoutes);
 // app.use('/api/v1/search', searchRoutes);
-app.use('/api/v1/convert', convertRoutes);
+app.use('/api/v1/things', things);
 
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
