@@ -7,17 +7,13 @@
     "build": "prettier --check . && stylelint --allow-empty-input \"**/*.{css,scss}\" && next build",
     "pretty": "prettier --write .",
     "start": "next start",
-    "lint": "next lint"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+    "lint": "next lint",
+    "pre-commit": "lint-staged"
   },
   "lint-staged": {
-    "src/*.{ts,tsx}": "eslint",
-    "src/*.{css,scss}": "stylelint",
-    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": "prettier -w -u"
+    "./src/*.{ts,tsx}": "eslint",
+    "./src/*.{css,scss}": "stylelint",
+    "./src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": "prettier -w -u"
   },
   "dependencies": {
     "@next/third-parties": "^15.1.7",
@@ -39,10 +35,13 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@typescript-eslint/eslint-plugin": "^8.25.0",
+    "@typescript-eslint/parser": "^8.25.0",
     "autoprefixer": "^10.4.20",
     "eslint": "^9",
+    "eslint-config-airbnb": "^19.0.4",
     "eslint-config-next": "15.1.7",
-    "husky": "^9.1.7",
+    "eslint-config-prettier": "^10.0.2",
     "lint-staged": "^15.4.3",
     "playwright": "^1.50.1",
     "postcss": "^8",
@@ -59,6 +58,6 @@
     "stylelint-config-recess-order": "^6.0.0",
     "stylelint-config-standard": "^37.0.0",
     "stylelint-scss": "^6.11.1",
-    "typescript": "^5"
+    "typescript": "^5.7.3"
   }
 }
