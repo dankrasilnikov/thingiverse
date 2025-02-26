@@ -54,7 +54,18 @@ router.post('/', multipleUpload, async (req, res) => {
             const originalName = file.originalname;
             const imgBuffer = file.buffer;
 
-            const {webpFullUrl, webpPreviewUrl, blurDataUrl} = processImage(imgBuffer, originalName)
+            const {webpFull, webpPreview, blurDataUrl} = await processImage(imgBuffer, originalName);
+
+            const webpFullUrl = await uploadToR2(
+                webpFull.key,
+                webpFull.buffer,
+                webpFull.contentType
+            );
+            const webpPreviewUrl = await uploadToR2(
+                webpPreview.key,
+                webpPreview.buffer,
+                webpPreview.contentType
+            );
 
             imagesResult.push({
                 imgUrl: webpFullUrl,
