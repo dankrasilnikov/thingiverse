@@ -1,0 +1,58 @@
+@import url('@/styles/colors.scss');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  line-height: 130%;
+  text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100vh;
+  font-family: sans-serif;
+  color: #333;
+  background-color: #f0f0f0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: $black;
+  background: linear-gradient(
+      to bottom,
+      #196ef0,
+      #196ef0 3%,
+      #eaeaea 30%,
+      #eaeaea 75%
+    )
+    no-repeat;
+}
+
+.container {
+  width: 100%;
+  max-width: 1000px;
+  min-height: 100vh;
+}
+
+:root {
+  --button-height: 10vh;
+  --button-width: calc(var(--button-height) * 1.618);
+}

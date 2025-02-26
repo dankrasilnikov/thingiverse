@@ -1,0 +1,13 @@
+@use '@/styles/colors' as *;
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  background-color: $white;
+  border: 1px solid $lightgray;
+  border-radius: 50%;
+}

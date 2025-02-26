@@ -1,0 +1,24 @@
+{
+  "name": "thingiverse-demo-api",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.750.0",
+    "@elastic/elasticsearch": "^8.17.1",
+    "axios": "^1.7.9",
+    "buffer": "^6.0.3",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "filereader": "^0.10.3",
+    "multer": "1.4.5-lts.1",
+    "sharp": "^0.33.5",
+    "three": "^0.173.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
