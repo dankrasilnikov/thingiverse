@@ -51,9 +51,9 @@ export default function Home() {
             <label htmlFor={'author'}>Author</label>
             <input type="text" value={author} onChange={(e) => setAuthor(e.target.value)} id="author" name="author"/>
             <label htmlFor={'stlFiles'}>Files</label>
-            <input type="file" ref={stlInput} id="stlFiles" name="stlFiles" multiple/>
+            <input type="file" accept=".stl" ref={stlInput} id="stlFiles" name="stlFiles" multiple/>
             <label htmlFor={'imageFiles'}>Images</label>
-            <input type="file" ref={imageInput} id="imageFiles" name="imageFiles" multiple/>
+            <input type="file" accept='image/png, image/jpeg' ref={imageInput} id="imageFiles" name="imageFiles" multiple/>
             <button onClick={send}>Send to backend</button>
         </div>
     );
