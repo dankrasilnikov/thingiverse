@@ -2,7 +2,7 @@ import express from 'express';
 import { Client } from '@elastic/elasticsearch';
 
 const router = express.Router();
-const esClient = new Client({ node: 'http://46.202.129.157:9200' });
+const esClient = new Client({ node: process.env.ELASTICSEARCH_URL });
 
 router.get('/', async (req, res) => {
     const query = req.query.q ? String(req.query.q) : '';

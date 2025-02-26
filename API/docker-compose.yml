@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  api:
+    build: .
+    container_name: thingiverse-api
+    ports:
+      - "${PORT}:3000"
+    environment:
+      - PORT=${PORT}
+      - ELASTICSEARCH_URL=${ELASTICSEARCH_URL}
+      - R2_BUCKET=${R2_BUCKET}
+      - R2_ENDPOINT=${R2_ENDPOINT}
+      - R2_ACCESS_KEY=${R2_ACCESS_KEY}
+      - R2_SECRET_KEY=${R2_SECRET_KEY}
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

@@ -5,7 +5,7 @@ import {processImage} from "../services/imageConvert.js";
 import multer from "multer";
 
 const router = express.Router();
-const esClient = new Client({node: 'http://46.202.129.157:9200'});
+const esClient = new Client({node: process.env.ELASTICSEARCH_URL});
 
 const storage = multer.memoryStorage();
 const upload = multer({
