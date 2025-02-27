@@ -43,6 +43,9 @@ importers:
       three:
         specifier: 0.126.1
         version: 0.126.1
+      three-stdlib:
+        specifier: ^2.35.14
+        version: 2.35.14(three@0.126.1)
       three-stl-loader:
         specifier: ^1.0.6
         version: 1.0.6
@@ -841,6 +844,12 @@ packages:
         integrity: sha512-rfT93uj5s0PRL7EzccGMs3brplhcrghnDoV26NqKhCAS1hVo+WdNsPvE/yb6ilfr5hi2MEk6d5EWJTKdxg8jVw==,
       }
 
+  '@types/draco3d@1.4.10':
+    resolution:
+      {
+        integrity: sha512-AX22jp8Y7wwaBgAixaSvkoG4M/+PlAcm3Qs4OW8yT9DM4xUpWKeFhLueTAyZF39pviAdcDdeJoACapiAceqNcw==,
+      }
+
   '@types/estree@1.0.6':
     resolution:
       {
@@ -875,6 +884,12 @@ packages:
     resolution:
       {
         integrity: sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==,
+      }
+
+  '@types/offscreencanvas@2019.7.3':
+    resolution:
+      {
+        integrity: sha512-ieXiYmgSRXUDeOntE1InxjWyvEelZGP63M+cGuquuRLuIKKT1osnkXjxev9B7d1nXSug5vpunx+gNlbVxMlC9A==,
       }
 
   '@types/react-dom@19.0.4':
@@ -1723,6 +1738,12 @@ packages:
         integrity: sha512-7ZgogeTnjuHbo+ct10G9Ffp0mif17idi0IyWNVA/wcwcm7NPOD/WEHVP3n7n3MhXqxoIYm8d6MuZohYWIZ4T3w==,
       }
 
+  draco3d@1.5.7:
+    resolution:
+      {
+        integrity: sha512-m6WCKt/erDXcw+70IJXnG7M3awwQPAsZvJGX5zY7beBqpELw6RDGkYVU0W43AFxye4pDZ5i2Lbyc/NNGqwjUVQ==,
+      }
+
   dunder-proto@1.0.1:
     resolution:
       {
@@ -2174,6 +2195,12 @@ packages:
     peerDependenciesMeta:
       picomatch:
         optional: true
+
+  fflate@0.6.10:
+    resolution:
+      {
+        integrity: sha512-IQrh3lEPM93wVCEczc9SaAOvkmcoQn/G8Bo1e8ZPlY3X3bnAxWaBdvTdvM1hP62iZp0BXWDy4vTAy4fF0+Dlpg==,
+      }
 
   fflate@0.8.2:
     resolution:
@@ -3858,6 +3885,12 @@ packages:
       }
     engines: { node: ^10 || ^12 || >=14 }
 
+  potpack@1.0.2:
+    resolution:
+      {
+        integrity: sha512-choctRBIV9EMT9WGAZHn3V7t0Z2pMQyl0EZE6pFc/6ml3ssw7Dlf/oAOvFwjm1HVsqfQN8GfeFyJ+d8tRzqueQ==,
+      }
+
   precss@4.0.0:
     resolution:
       {
@@ -4635,6 +4668,14 @@ packages:
         integrity: sha512-oB7yIimd8SuGptespDAZnNkzIz+NWaJCu2RMsbs4Wmp9zSDUM8Nhi3s2OOcqYuv3mN4hitXc8DVx+LyUmbUDiA==,
       }
 
+  three-stdlib@2.35.14:
+    resolution:
+      {
+        integrity: sha512-kpCaEg59M9usFTgHC+YZNKvx7nMoLI2zQxZBV8pjoNW6vNZmGyXpaLBL09A2oLCsS3KepgMFkOuk6lRoebTNvA==,
+      }
+    peerDependencies:
+      three: '>=0.128.0'
+
   three-stl-loader@1.0.6:
     resolution:
       {
@@ -5202,6 +5243,8 @@ snapshots:
 
   '@types/aria-query@5.0.4': {}
 
+  '@types/draco3d@1.4.10': {}
+
   '@types/estree@1.0.6': {}
 
   '@types/jest@27.5.2':
@@ -5218,6 +5261,8 @@ snapshots:
       undici-types: 6.19.8
 
   '@types/normalize-package-data@2.4.4': {}
+
+  '@types/offscreencanvas@2019.7.3': {}
 
   '@types/react-dom@19.0.4(@types/react@19.0.10)':
     dependencies:
@@ -5735,6 +5780,8 @@ snapshots:
 
   dom-accessibility-api@0.6.3: {}
 
+  draco3d@1.5.7: {}
+
   dunder-proto@1.0.1:
     dependencies:
       call-bind-apply-helpers: 1.0.2
@@ -6175,6 +6222,8 @@ snapshots:
   fdir@6.4.3(picomatch@4.0.2):
     optionalDependencies:
       picomatch: 4.0.2
+
+  fflate@0.6.10: {}
 
   fflate@0.8.2: {}
 
@@ -7167,6 +7216,8 @@ snapshots:
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
+  potpack@1.0.2: {}
+
   precss@4.0.0:
     dependencies:
       postcss: 7.0.39
@@ -7722,6 +7773,16 @@ snapshots:
   tcomb@3.2.29: {}
 
   third-party-capital@1.0.20: {}
+
+  three-stdlib@2.35.14(three@0.126.1):
+    dependencies:
+      '@types/draco3d': 1.4.10
+      '@types/offscreencanvas': 2019.7.3
+      '@types/webxr': 0.5.21
+      draco3d: 1.5.7
+      fflate: 0.6.10
+      potpack: 1.0.2
+      three: 0.126.1
 
   three-stl-loader@1.0.6: {}
 
