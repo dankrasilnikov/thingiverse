@@ -10,8 +10,8 @@ const ButtonHistoryBack: React.FC<{}> = () => {
 
   return (
     <ButtonWrapperCircle
-      src={'/icons/arrow_back.svg'}
-      alt={'Back History'}
+      src='/icons/arrow_back.svg'
+      alt='Back History'
       onClick={backHistory}
     />
   )

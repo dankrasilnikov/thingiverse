@@ -25,19 +25,17 @@ const nextConfig: NextConfig = {
 
   compress: true,
 
-  headers: async () => {
-    return [
-      {
-        source: '/static/(.*)',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
-          },
-        ],
-      },
-    ]
-  },
+  headers: async () => [
+    {
+      source: '/static/(.*)',
+      headers: [
+        {
+          key: 'Cache-Control',
+          value: 'public, max-age=31536000, immutable',
+        },
+      ],
+    },
+  ],
 }
 
 export default nextConfig

@@ -51,7 +51,7 @@ export default function Home() {
         flexDirection: 'column',
       }}
     >
-      <label htmlFor={'title'}>Title</label>
+      <label htmlFor='title'>Title</label>
       <input
         type='text'
         value={title}
@@ -59,7 +59,7 @@ export default function Home() {
         id='title'
         name='title'
       />
-      <label htmlFor={'description'}>Description</label>
+      <label htmlFor='description'>Description</label>
       <input
         type='text'
         value={author}
@@ -67,7 +67,7 @@ export default function Home() {
         id='description'
         name='description'
       />
-      <label htmlFor={'author'}>Author</label>
+      <label htmlFor='author'>Author</label>
       <input
         type='text'
         value={author}
@@ -75,7 +75,7 @@ export default function Home() {
         id='author'
         name='author'
       />
-      <label htmlFor={'stlFiles'}>Files</label>
+      <label htmlFor='stlFiles'>Files</label>
       <input
         type='file'
         accept='.stl'
@@ -84,7 +84,7 @@ export default function Home() {
         name='stlFiles'
         multiple
       />
-      <label htmlFor={'imageFiles'}>Images</label>
+      <label htmlFor='imageFiles'>Images</label>
       <input
         type='file'
         accept='image/png, image/jpeg'

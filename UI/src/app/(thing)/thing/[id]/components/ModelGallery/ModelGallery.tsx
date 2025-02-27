@@ -35,14 +35,12 @@ const gallery = [
   },
 ]
 
-const ModelGallery: React.FC<{}> = () => {
-  return (
-    <div className={styles.gallery}>
-      {gallery.map(({ src, alt, id }) => (
-        <GalleryItem src={src} alt={alt} key={id} />
-      ))}
-    </div>
-  )
-}
+const ModelGallery: React.FC<{}> = () => (
+  <div className={styles.gallery}>
+    {gallery.map(({ src, alt, id }) => (
+      <GalleryItem src={src} alt={alt} key={id} />
+    ))}
+  </div>
+)
 
 export default ModelGallery

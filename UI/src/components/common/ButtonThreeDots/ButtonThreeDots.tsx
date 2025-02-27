@@ -10,8 +10,8 @@ const ButtonThreeDots: React.FC<{}> = () => {
 
   return (
     <ButtonWrapperCircle
-      src={'/icons/three_dots.svg'}
-      alt={'Options'}
+      src='/icons/three_dots.svg'
+      alt='Options'
       onClick={openOptions}
     />
   )

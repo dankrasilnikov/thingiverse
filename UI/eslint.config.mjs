@@ -5,18 +5,26 @@ import { FlatCompat } from '@eslint/eslintrc'
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-})
+const compat = new FlatCompat({ baseDirectory: __dirname })
 
-const eslintConfig = [
-  ...compat.extends(
-    'next/core-web-vitals',
-    'next/typescript',
-    'airbnb',
-    'airbnb/hooks',
-    'prettier'
-  ),
+export default [
+  {
+    ignores: [
+      'node_modules/',
+      '.next/',
+      '.husky/',
+      'coverage/',
+      'dist/',
+      '*.log',
+      'playwright-report/',
+      '.nyc_output/',
+      'test-results/',
+      'junit.xml',
+      'docs/',
+    ],
+  },
+  ...compat.config({
+    extends: ['next/core-web-vitals', 'next/typescript', 'prettier'],
+    rules: {},
+  }),
 ]
-
-export default eslintConfig

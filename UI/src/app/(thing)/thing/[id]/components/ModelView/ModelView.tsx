@@ -3,13 +3,13 @@
 import React, { useEffect, useRef, useState } from 'react'
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
-import styles from './modelview.module.scss'
 import Image from 'next/image'
 import ButtonPrintNow from '@/components/ButtonPrintNow'
+import TreeSTLLoader from 'three-stl-loader'
 import ButtonSwitchDimension from '../ButtonSwitchDimension'
 
 // @ts-ignore
-import TreeSTLLoader from 'three-stl-loader'
+import styles from './modelview.module.scss'
 
 const STLLoader = TreeSTLLoader(THREE)
 
@@ -138,19 +138,17 @@ function ModelView({
     }
   }, [isModelVisible])
 
-  const getPlaceholder = () => {
-    return (
-      <Image
-        width={1000}
-        height={1000}
-        priority={true}
-        draggable={false}
-        src={placeholderSrc}
-        alt={placeholderAlt}
-        className={styles.modelPreview}
-      />
-    )
-  }
+  const getPlaceholder = () => (
+    <Image
+      width={1000}
+      height={1000}
+      priority
+      draggable={false}
+      src={placeholderSrc}
+      alt={placeholderAlt}
+      className={styles.modelPreview}
+    />
+  )
 
   return (
     <div className={styles.modelCanvas} ref={mountRef}>

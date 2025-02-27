@@ -1,4 +1,4 @@
-@use '@/styles/colors' as *;
+@use '@/styles/colors' as colors;
 
 .button {
   display: flex;
@@ -7,7 +7,7 @@
   width: 24px;
   height: 24px;
   cursor: pointer;
-  background-color: $white;
-  border: 1px solid $lightgray;
+  background-color: colors.$white;
+  border: 1px solid colors.$lightgray;
   border-radius: 50%;
 }

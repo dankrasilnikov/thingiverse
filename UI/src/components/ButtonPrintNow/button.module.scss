@@ -1,4 +1,4 @@
-@use '@/styles/colors.scss' as *;
+@use '@/styles/colors' as colors;
 
 @property --rotate {
   syntax: '<angle>';
@@ -14,11 +14,11 @@
   padding: 8px 16px;
   font-size: 16px;
   font-weight: bold;
-  color: $white;
+  color: colors.$white;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
-  background: $primary;
+  background: colors.$primary;
   border-top-left-radius: 30px;
   transition: border-top-left-radius 0.4s;
 
