@@ -2,7 +2,7 @@ import React from 'react'
 import Script from 'next/script'
 import { GoogleTagManager } from '@next/third-parties/google'
 
-const ExternalScripts: React.FC<{}> = () => (
+const ExternalScripts: React.FC = () => (
   <>
     <Script
       strategy='afterInteractive'

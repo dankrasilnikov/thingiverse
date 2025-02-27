@@ -4,7 +4,7 @@ import ButtonThreeDots from '@/components/common/ButtonThreeDots'
 import Search from '@/components/common/Search/Search'
 import styles from './header.module.scss'
 
-const Header: React.FC<{}> = () => (
+const Header: React.FC = () => (
   <header className={styles.header}>
     <ButtonHistoryBack />
     <Search />

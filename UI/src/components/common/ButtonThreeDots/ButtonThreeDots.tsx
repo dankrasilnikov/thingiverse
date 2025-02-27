@@ -3,10 +3,8 @@
 import React from 'react'
 import ButtonWrapperCircle from '@/components/common/ButtonWrapperCircle/ButtonWrapperCircle'
 
-const ButtonThreeDots: React.FC<{}> = () => {
-  const openOptions = () => {
-    console.log('Options open')
-  }
+const ButtonThreeDots: React.FC = () => {
+  const openOptions = () => {}
 
   return (
     <ButtonWrapperCircle

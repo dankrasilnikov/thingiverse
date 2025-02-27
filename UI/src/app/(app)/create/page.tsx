@@ -31,14 +31,12 @@ export default function Home() {
     }
 
     try {
-      const response = await fetch('http://localhost:3000/api/v1/things', {
+      await fetch('http://localhost:3000/api/v1/things', {
         method: 'POST',
         body: formData,
       })
-      const data = await response.json()
-      console.log('Ответ API:', data)
     } catch (error) {
-      console.error('Ошибка запроса:', error)
+      console.error(error)
     }
   }
 
@@ -55,7 +53,7 @@ export default function Home() {
       <input
         type='text'
         value={title}
-        onChange={(e) => setTitle(e.target.value)}
+        onChange={(event_) => setTitle(event_.target.value)}
         id='title'
         name='title'
       />
@@ -63,7 +61,7 @@ export default function Home() {
       <input
         type='text'
         value={author}
-        onChange={(e) => setDescription(e.target.value)}
+        onChange={(event_) => setDescription(event_.target.value)}
         id='description'
         name='description'
       />
@@ -71,7 +69,7 @@ export default function Home() {
       <input
         type='text'
         value={author}
-        onChange={(e) => setAuthor(e.target.value)}
+        onChange={(event_) => setAuthor(event_.target.value)}
         id='author'
         name='author'
       />
