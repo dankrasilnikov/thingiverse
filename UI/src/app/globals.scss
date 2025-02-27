@@ -1,4 +1,4 @@
-@import url('@/styles/colors.scss');
+@use '@/styles/colors' as colors;
 
 *,
 *::before,
@@ -35,7 +35,7 @@ body {
   align-items: center;
   justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
-  color: $black;
+  color: colors.$black;
   background: linear-gradient(
       to bottom,
       #196ef0,

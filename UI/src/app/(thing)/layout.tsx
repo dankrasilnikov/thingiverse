@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
-import Header from './components/Header'
 import React from 'react'
+import Header from './components/Header'
 
 export const metadata: Metadata = {
   title: 'Cool Things',

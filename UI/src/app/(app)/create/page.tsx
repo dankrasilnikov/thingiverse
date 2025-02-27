@@ -31,14 +31,12 @@ export default function Home() {
     }
 
     try {
-      const response = await fetch('http://localhost:3000/api/v1/things', {
+      await fetch('http://localhost:3000/api/v1/things', {
         method: 'POST',
         body: formData,
       })
-      const data = await response.json()
-      console.log('Ответ API:', data)
     } catch (error) {
-      console.error('Ошибка запроса:', error)
+      console.error(error)
     }
   }
 
@@ -51,31 +49,31 @@ export default function Home() {
         flexDirection: 'column',
       }}
     >
-      <label htmlFor={'title'}>Title</label>
+      <label htmlFor='title'>Title</label>
       <input
         type='text'
         value={title}
-        onChange={(e) => setTitle(e.target.value)}
+        onChange={(event_) => setTitle(event_.target.value)}
         id='title'
         name='title'
       />
-      <label htmlFor={'description'}>Description</label>
+      <label htmlFor='description'>Description</label>
       <input
         type='text'
         value={author}
-        onChange={(e) => setDescription(e.target.value)}
+        onChange={(event_) => setDescription(event_.target.value)}
         id='description'
         name='description'
       />
-      <label htmlFor={'author'}>Author</label>
+      <label htmlFor='author'>Author</label>
       <input
         type='text'
         value={author}
-        onChange={(e) => setAuthor(e.target.value)}
+        onChange={(event_) => setAuthor(event_.target.value)}
         id='author'
         name='author'
       />
-      <label htmlFor={'stlFiles'}>Files</label>
+      <label htmlFor='stlFiles'>Files</label>
       <input
         type='file'
         accept='.stl'
@@ -84,7 +82,7 @@ export default function Home() {
         name='stlFiles'
         multiple
       />
-      <label htmlFor={'imageFiles'}>Images</label>
+      <label htmlFor='imageFiles'>Images</label>
       <input
         type='file'
         accept='image/png, image/jpeg'

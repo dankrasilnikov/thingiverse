@@ -1,4 +1,4 @@
-@use '@/styles/colors' as *;
+@use '@/styles/colors' as colors;
 
 .modelCanvas {
   position: relative;
@@ -10,7 +10,7 @@
   width: 70%;
   height: auto;
   aspect-ratio: 16 / 9;
-  background-color: $bg;
+  background-color: colors.$bg;
 }
 
 .modelPreview {

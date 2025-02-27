@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "prettier --check . && stylelint --allow-empty-input \"**/*.{css,scss}\" && next build",
+    "build": "prettier --check . && stylelint --allow-empty-input \"**/*.{css,scss}\" && eslint --cache --fix ./src && next build",
     "start": "next start",
-    "lint": "prettier --write . && stylelint --fix \\\"**/*.{css,scss}\\\" && eslint --cache --fix .",
+    "lint": "prettier --write . && stylelint --fix \\\"**/*.{css,scss}\\\" && eslint --cache --fix ./src",
     "pre-commit": "lint-staged"
   },
   "lint-staged": {
@@ -27,6 +27,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "three": "0.126.1",
+    "three-stdlib": "^2.35.14",
     "three-stl-loader": "^1.0.6"
   },
   "devDependencies": {
@@ -37,10 +38,19 @@
     "@typescript-eslint/eslint-plugin": "^8.25.0",
     "@typescript-eslint/parser": "^8.25.0",
     "autoprefixer": "^10.4.20",
-    "eslint": "^9",
-    "eslint-config-airbnb": "^19.0.4",
+    "eslint": "^9.21.0",
     "eslint-config-next": "15.1.7",
     "eslint-config-prettier": "^10.0.2",
+    "eslint-import-resolver-typescript": "^3.8.3",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-prettier": "^5.2.3",
+    "eslint-plugin-promise": "^7.2.1",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "eslint-plugin-sonarjs": "^3.0.2",
+    "eslint-plugin-testing-library": "^7.1.1",
+    "eslint-plugin-unicorn": "^57.0.0",
     "lint-staged": "^15.4.3",
     "playwright": "^1.50.1",
     "postcss": "^8",
@@ -56,6 +66,7 @@
     "stylelint-config-css-modules": "^4.4.0",
     "stylelint-config-recess-order": "^6.0.0",
     "stylelint-config-standard": "^37.0.0",
+    "stylelint-config-standard-scss": "^14.0.0",
     "stylelint-scss": "^6.11.1",
     "typescript": "^5.7.3"
   }

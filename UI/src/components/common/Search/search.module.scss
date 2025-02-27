@@ -1,18 +1,18 @@
-@use '@/styles/colors' as *;
+@use '@/styles/colors' as colors;
 
 .inputSearch {
   display: block;
   width: 240px;
   padding: 14px 0;
   font-size: 12px;
-  color: $black;
+  color: colors.$black;
   text-align: center;
-  background-color: $white;
-  border: 1px solid $lightgray;
+  background-color: colors.$white;
+  border: 1px solid colors.$lightgray;
   border-radius: 9999px;
 
   &::placeholder {
-    color: $black;
+    color: colors.$black;
     opacity: 1;
   }
 

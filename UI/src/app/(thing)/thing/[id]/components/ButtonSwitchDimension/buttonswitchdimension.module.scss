@@ -1,11 +1,11 @@
-@use '@/styles/colors' as *;
+@use '@/styles/colors' as colors;
 
 .buttonSwitchDimensions {
   padding: 8px;
   font-size: 16px;
-  color: $white;
+  color: colors.$white;
   cursor: pointer;
-  background-color: $primary;
+  background-color: colors.$primary;
   border: none;
   border-bottom-left-radius: 12px;
   transition: border-bottom-left-radius 0.4s;
