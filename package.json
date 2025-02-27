@@ -8,6 +8,6 @@
   },
   "scripts": {
     "prepare": "husky",
-    "pre-commit": "pnpm run --filter \"UI/\" pre-commit"
+    "pre-commit": "pnpm --filter thingiverse run pre-commit"
   }
 }
