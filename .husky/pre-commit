@@ -1,1 +1,1 @@
-pnpm pre-commit
+pnpm dlx commitlint --edit "$1" && pnpm pre-commit
